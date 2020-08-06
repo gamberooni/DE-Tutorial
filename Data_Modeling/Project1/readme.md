@@ -11,7 +11,9 @@ They'd like a data engineer to create a Postgres database with tables designed t
 In this project, you'll apply what you've learned on data modeling with Postgres and build an ETL pipeline using Python. To complete the project, you will need to define fact and dimension tables for a star schema for a particular analytic focus, and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL. 
 
 **Data**
+
 The data is extracted from JSON files residing in the "data" directory. These are just a part of the Million Song Dataset. 
 
 **Project Workflow**
+
 First, a database called "sparkifydb" is created, along with tables -- artists, songs, time, songplays, users. All the SQL queries resides in "sql_queries.py". The file "etl.py" extracts the relevant data and load them into each table.  
