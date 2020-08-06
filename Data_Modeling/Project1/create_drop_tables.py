@@ -15,18 +15,23 @@ conn.set_session(autocommit=True) # to avoid manually commit every time a transa
 # cur.execute(create_database)
 
 # create tables
-cur.execute(create_songplays)
-cur.execute(create_users)    
-cur.execute(create_songs)
-cur.execute(create_artists)
-cur.execute(create_time)
+def create_tables(cur):
+    cur.execute(create_songplays)
+    cur.execute(create_users)    
+    cur.execute(create_songs)
+    cur.execute(create_artists)
+    cur.execute(create_time)
 
 # drop tables
-# cur.execute(songplays_table_drop)
-# cur.execute(users_table_drop)
-# cur.execute(songs_table_drop)
-# cur.execute(artists_table_drop)
-# cur.execute(time_table_drop)
+def drop_tables(cur):
+    cur.execute(songplays_table_drop)
+    cur.execute(users_table_drop)
+    cur.execute(songs_table_drop)
+    cur.execute(artists_table_drop)
+    cur.execute(time_table_drop)
+
+create_tables(cur)
+# drop_tables(cur)
 
 cur.close()
 conn.close()

@@ -85,8 +85,7 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 # FIND SONGS
 song_select = \
-    "SELECT ss.song_id, ss.artist_id FROM songs ss \
-    JOIN artists ars on ss.artist_id = ars.artist_id \
-    WHERE ss.title = %s \
-    AND ars.name = %s \
-    AND ss.duration = %s;"
+    "SELECT songs.song_id, songs.artist_id FROM songs \
+    JOIN artists \
+    ON songs.artist_id = artists.artist_id \
+    WHERE songs.title = %s AND artists.name = %s AND songs.duration = %s;"
