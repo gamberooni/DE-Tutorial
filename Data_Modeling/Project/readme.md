@@ -1,19 +1,14 @@
-**Project: Data Modeling with Postgres**
+# Project: Data Modeling with Postgres
+## Introduction
+A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. A database schema and ETL pipeline are to be created for this optimized queries and analysis. 
 
-**Introduction**
+## Project Description
+In this project, data modeling and an ETL pipeline is done using PostgreSQL and Python. A database utilizing the star schema containing fact and dimenstion tables is created. The ETL pipeline transfers data from files in two local directories (song files and log files) into these tables in Postgres using Python and SQL. 
 
-A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
+## Data
+The data is extracted from JSON files residing in the "data" directory. These are just a part of the Million Song Dataset.
 
-They'd like a data engineer to create a Postgres database with tables designed to optimize queries on song play analysis, and bring you on the project. Your role is to create a database schema and ETL pipeline for this analysis. You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.
+The song files consist of relevant fields for the songs table and artists table. The log files consist of relevant fields for the time table and users table. The fields in the songplays table takes in certain fields from all the tables -- songs, artists, time, users. This is achieved by using JOIN statements. 
 
-**Project Description**
-
-In this project, you'll apply what you've learned on data modeling with Postgres and build an ETL pipeline using Python. To complete the project, you will need to define fact and dimension tables for a star schema for a particular analytic focus, and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL. 
-
-**Data**
-
-The data is extracted from JSON files residing in the "data" directory. These are just a part of the Million Song Dataset. 
-
-**Project Workflow**
-
+## Project Workflow
 First, a database called "sparkifydb" is created, along with tables -- artists, songs, time, songplays, users. All the SQL queries resides in "sql_queries.py". The file "etl.py" extracts the relevant data and load them into each table.  
